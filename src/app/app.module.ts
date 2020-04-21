@@ -8,14 +8,13 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
-import {MerchantComponent} from './components/merchant/merchant.component';
 import {LoaderComponent} from './components/loader/loader.component';
 import {MerchantService} from './components/merchant/merchant.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, MerchantComponent, LoaderComponent],
+  declarations: [AppComponent, LoaderComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

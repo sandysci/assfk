@@ -53,6 +53,7 @@ ion-menu-button {
     .panel--header {
       flex-direction: row;
       justify-content: space-between;
+      padding-left: 3%;
 
       h3 {
         margin: 0;
@@ -64,6 +65,7 @@ ion-menu-button {
 
   .panel--form-inner {
     padding-right: 18%;
+    padding-left:3%;
   }
 }
 

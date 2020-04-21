@@ -20,20 +20,20 @@
                             <ion-input type="text"
                                        ngModel
                                        required
-                                       name="first_name"
+                                       name="merchant_name"
                                        placeholder="Merchant Name">
 
                             </ion-input>
                         </ion-item>
                     </ion-col>
                 </ion-row>
-                <ion-row>
+                <ion-row *ngFor="let bc of businessCategory; let idx = index">
                     <ion-col>
                         <ion-list>
-                            <ion-label>Business Category 1</ion-label>
+                            <ion-label>Business Category {{idx+1}}</ion-label>
                             <ion-item>
-                                <ion-select [value]="1">
-                                    <ion-select-option value="1">Jewelry And Watches</ion-select-option>
+                                <ion-select [ngModel]="businessCategory[idx].value">
+                                    <ion-select-option>{{bc.label}}</ion-select-option>
                                 </ion-select>
                             </ion-item>
                         </ion-list>
@@ -41,19 +41,9 @@
                 </ion-row>
                 <ion-row>
                     <ion-col>
-                        <ion-list>
-                            <ion-label>
-                                Business Category 2
-                            </ion-label>
-                            <ion-item>
-                                <ion-select [value]="1" name="business_category">
-                                    <ion-select-option value="1">Jewelry And Watches</ion-select-option>
-                                </ion-select>
-                            </ion-item>
-                            <ion-label>
-                                + Add More Business Category
-                            </ion-label>
-                        </ion-list>
+                        <ion-label (click)="addBusinessCategory()">
+                            + Add More Business Category
+                        </ion-label>
                     </ion-col>
                 </ion-row>
                 <ion-row>

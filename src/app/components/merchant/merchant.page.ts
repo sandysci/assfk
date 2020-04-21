@@ -6,7 +6,7 @@ import {NgForm} from '@angular/forms';
 
 
 @Component({
-  selector: 'app-folder',
+  selector: 'app-merchant',
   templateUrl: './merchant.page.html',
   styleUrls: ['./merchant.page.scss'],
 })
@@ -15,8 +15,10 @@ export class MerchantComponent implements OnInit {
   alert: string;
   isLoading: boolean;
   merchant: IMerchant;
+  businessCategory: any;
 
   @ViewChild('merchantForm', {static: true}) form: NgForm;
+
   constructor(private activatedRoute: ActivatedRoute, private merchantService: MerchantService) {
   }
 
@@ -69,6 +71,10 @@ export class MerchantComponent implements OnInit {
               }
             },
             e => console.log('error', e));
+  }
+
+  addBusinessCategory() {
+    this.businessCategory.push({label: 'Jewelry Category', value: this.businessCategory.length + 1});
   }
 
   resetAlert() {
