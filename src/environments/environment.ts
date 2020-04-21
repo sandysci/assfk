@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://api.lifetechnologysolutions.com/'
+  apiUrl: 'https://api.lifetechnologysolutions.com/',
+  apiKey: '32a40653a882caf12f70d25a21ebe4d902208bc3'
 };
 
 /*

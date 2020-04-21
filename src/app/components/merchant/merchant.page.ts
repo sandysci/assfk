@@ -10,14 +10,16 @@ import {NgForm} from '@angular/forms';
   templateUrl: './merchant.page.html',
   styleUrls: ['./merchant.page.scss'],
 })
+
 export class MerchantComponent implements OnInit {
   public folder: string;
   alert: string;
   isLoading: boolean;
   merchant: IMerchant;
-  businessCategory: any;
+  businessCategory = [];
 
   @ViewChild('merchantForm', {static: true}) form: NgForm;
+
 
   constructor(private activatedRoute: ActivatedRoute, private merchantService: MerchantService) {
   }
@@ -74,8 +76,14 @@ export class MerchantComponent implements OnInit {
   }
 
   addBusinessCategory() {
-    this.businessCategory.push({label: 'Jewelry Category', value: this.businessCategory.length + 1});
+    const value = this.businessCategory.length + 1;
+    this.businessCategory.push({
+      label: 'Jewelry Category',
+      name: 'business_category_' + value,
+      value
+    });
   }
+
 
   resetAlert() {
     this.alert = '';

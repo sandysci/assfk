@@ -5,8 +5,6 @@ import {FormsModule} from '@angular/forms';
 import {IonicModule} from '@ionic/angular';
 
 import {FolderPageRoutingModule} from './merchant-routing.module';
-import {FileUploadModule} from 'ng2-file-upload';
-
 import {MerchantComponent} from './merchant.page';
 
 @NgModule({
@@ -14,8 +12,7 @@ import {MerchantComponent} from './merchant.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    FileUploadModule,
-    FolderPageRoutingModule
+    FolderPageRoutingModule,
   ],
   declarations: [MerchantComponent]
 })

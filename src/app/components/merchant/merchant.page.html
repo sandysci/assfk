@@ -30,9 +30,10 @@
                 <ion-row *ngFor="let bc of businessCategory; let idx = index">
                     <ion-col>
                         <ion-list>
-                            <ion-label>Business Category {{idx+1}}</ion-label>
+                            <ion-label>Business Category {{idx + 1}}</ion-label>
                             <ion-item>
-                                <ion-select [ngModel]="businessCategory[idx].value">
+                                <ion-select name="{{businessCategory[idx].name}}"
+                                            [ngModel]="businessCategory[idx].value">
                                     <ion-select-option>{{bc.label}}</ion-select-option>
                                 </ion-select>
                             </ion-item>
@@ -101,8 +102,8 @@
                         <ion-list>
                             <ion-label>Select Bank</ion-label>
                             <ion-item>
-                                <ion-select placeholder="ex. Access Bank">
-                                    <ion-select-option value="access_bank">Access Bank</ion-select-option>
+                                <ion-select placeholder="ex. Access Bank" name="bank_id" [value]="1">
+                                    <ion-select-option value="1">Access Bank</ion-select-option>
                                 </ion-select>
                             </ion-item>
                         </ion-list>
@@ -118,7 +119,7 @@
                                        name="account_number"
                                        ngModel
                                        required
-                                       placeholder="ex. email@example.com"></ion-input>
+                                       placeholder="ex. 1234567892"></ion-input>
                         </ion-item>
                     </ion-col>
                     <ion-col>
@@ -133,6 +134,11 @@
                     </ion-col>
                 </ion-row>
             </ion-grid>
+
+<!--            <app-multi-file-upload>-->
+<!--            </app-multi-file-upload>-->
+<!--            <app-multi-file-upload>-->
+<!--            </app-multi-file-upload>-->
         </div>
 
     </form>

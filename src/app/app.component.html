@@ -4,7 +4,7 @@
             <ion-buttons slot="start">
                 <ion-menu-button></ion-menu-button>
             </ion-buttons>
-            <ion-col pushLg="10">
+            <ion-col pushLg="9">
                 <div class="nav--right">
                     <ion-label>Avatar Chip</ion-label>
                     <ion-avatar>
@@ -16,11 +16,13 @@
     </ion-header>
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
-      <ion-content>
+      <ion-content class="ion-margin-top">
         <ion-list id="inbox-list">
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
-<!--              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>-->
+            <ion-item (click)="selectedIndex = i"
+                      routerDirection="root" [routerLink]="[p.url]"
+                      lines="none" detail="false"
+                      [class.selected]="selectedIndex == i">
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>

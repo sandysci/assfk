@@ -29,6 +29,7 @@ import {FormsModule} from '@angular/forms';
     MerchantService,
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
   ],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
