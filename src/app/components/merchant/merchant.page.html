@@ -1,5 +1,6 @@
 <ion-content [fullscreen]="true">
-    <form (ngSubmit)="onSubmit()" class="panel--merchant">
+    <form (ngSubmit)="onSubmit()" #merchantForm='ngForm' class="panel--merchant">
+        <ion-spinner *ngIf="isLoading" name="circles"></ion-spinner>
         <div class="panel--header">
             <h3>Add Merchant </h3>
             <div class="panel--actions">
@@ -17,6 +18,8 @@
                     <ion-col>
                         <ion-item>
                             <ion-input type="text"
+                                       ngModel
+                                       required
                                        name="first_name"
                                        placeholder="Merchant Name">
 
@@ -43,7 +46,7 @@
                                 Business Category 2
                             </ion-label>
                             <ion-item>
-                                <ion-select [value]="1">
+                                <ion-select [value]="1" name="business_category">
                                     <ion-select-option value="1">Jewelry And Watches</ion-select-option>
                                 </ion-select>
                             </ion-item>
@@ -60,6 +63,7 @@
                         </ion-label>
                         <ion-item>
                             <ion-input type="text"
+                                       ngModel
                                        name="email"
                                        placeholder="ex. email@example.com">
 
@@ -72,6 +76,8 @@
                         </ion-label>
                         <ion-item>
                             <ion-input type="text"
+                                       ngModel
+                                       required
                                        name="mobile_number"
                                        placeholder="ex. 9231231231">
 
@@ -86,6 +92,8 @@
                         </ion-label>
                         <ion-item>
                             <ion-input type="text"
+                                       ngModel
+                                       required
                                        name="license_number"
                                        placeholder="ex. 1234567890123">
 
@@ -118,6 +126,8 @@
                         <ion-item>
                             <ion-input type="text"
                                        name="account_number"
+                                       ngModel
+                                       required
                                        placeholder="ex. email@example.com"></ion-input>
                         </ion-item>
                     </ion-col>
@@ -126,7 +136,8 @@
                             Enter 11-Digit Bvn
                         </ion-label>
                         <ion-item>
-                            <ion-input type="text" name="bvn_number" name="phone_number"
+                            <ion-input type="text"
+                                       name="bvn_number"
                                        placeholder="ex. 1234567890123"></ion-input>
                         </ion-item>
                     </ion-col>

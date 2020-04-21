@@ -12,6 +12,7 @@ import {MerchantComponent} from './components/merchant/merchant.component';
 import {LoaderComponent} from './components/loader/loader.component';
 import {MerchantService} from './components/merchant/merchant.service';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, MerchantComponent, LoaderComponent],
@@ -19,6 +20,7 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    FormsModule,
     HttpClientModule,
     AppRoutingModule
   ],

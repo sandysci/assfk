@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {MerchantService} from './merchant.service';
 import {IMerchant} from './merchant.model';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-merchant',
@@ -14,6 +15,7 @@ export class MerchantComponent implements OnInit {
   isLoading: boolean;
   merchant: IMerchant;
 
+  @ViewChild('merchantForm', {static: true}) form: NgForm;
   constructor(
       private merchantService: MerchantService,
   ) {
@@ -27,6 +29,7 @@ export class MerchantComponent implements OnInit {
   onSubmit() {
     this.isLoading = true;
     this.resetAlert();
+    console.log('this form data', this.form);
     const param = {
       first_name: 'Ayush1',
       last_name: 'Jayaswa1l',
@@ -60,14 +63,14 @@ export class MerchantComponent implements OnInit {
       ]
     };
 
-    this.merchantService.createMerchant(param)
-        .subscribe((res: any) => {
-              if (res.success) {
-                this.alert = 'success';
-                this.isLoading = false;
-              }
-            },
-            e => console.log('error', e));
+    // this.merchantService.createMerchant(param)
+    //     .subscribe((res: any) => {
+    //           if (res.success) {
+    //             this.alert = 'success';
+    //             this.isLoading = false;
+    //           }
+    //         },
+    //         e => console.log('error', e));
   }
 
   resetAlert() {
