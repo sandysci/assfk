@@ -15,6 +15,5 @@ export class MerchantService {
       Authorization: 'Token ' + environment.apiKey
     });
     return this.http.post(environment.apiUrl + 'superadmin/merchant', merchant, {headers});
-
   }
 }
