@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'merchant/:id',
-    loadChildren: () => import('./merchant/merchant.module').then(m => m.FolderPageModule)
+    loadChildren: () => import('./components/merchant/merchant.module').then(m => m.FolderPageModule)
   }
 ];
 
