@@ -1,4 +1,4 @@
-//@import "../../variables";
+
 
 
 ion-menu-button {
@@ -39,7 +39,8 @@ ion-menu-button {
     }
 
     .button--primary {
-
+      background-color: var(--ion-color-primary);
+      color: var(--ion-color-primary-contrast);
     }
   }
 
