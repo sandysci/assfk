@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://api.lifetechnologysolutions.com/',
+  apiKey: '32a40653a882caf12f70d25a21ebe4d902208bc3'
 };
 
 /*
